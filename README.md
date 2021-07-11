@@ -58,3 +58,8 @@ El sitio web contará con un módulo paso a paso para armar el pedido y al final
 
 https://github.com/luisrada14/icake_backend.git
 
+# Pantallazos de instalación Angular, Node y MongoDB
+
+ <p align="center">
+ <a href='https://drive.google.com/drive/folders/1g5jHjlQpNGuaw1ntxLz_u4rSKxxziWd6?usp=sharing'><img width="200" src="https://user-images.githubusercontent.com/74123374/125212279-e53b9080-e271-11eb-88b1-8f7ba010bbcb.png"></a>
+  </p>
