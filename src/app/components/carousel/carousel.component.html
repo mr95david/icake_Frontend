@@ -1,0 +1,34 @@
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide" width="100%">
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide" width="100%">
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide" width="100%">
+        </div>
+    </ng-template>
+
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[3]" alt="Random third slide" width="100%">
+        </div>
+    </ng-template>
+
+    <div class="carousel-text">
+        <p class="h1 title">Ordena tu torta fácil y sin complicaciones</p>
+        <p class="h3 subtitle">Sigue los pasos</p>
+        <button pButton type="button" label="Empezar mi orden" class="button-carousel p-button-rounded "
+            style="background-color: '#FF7D97'; border-color: '#FF7D97';"></button>
+        <button pButton type="button" label="Revisar el estado de mi orden"
+            class="p-button-rounded p-button-outlined button-secondary" style="border-color: #1D7A8C;"></button>
+    </div>
+
+
+</ngb-carousel>

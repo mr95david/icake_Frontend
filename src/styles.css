@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(./assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+body {
+    margin: 0;
+};
+

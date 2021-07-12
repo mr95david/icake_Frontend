@@ -1,0 +1,33 @@
+
+
+.carousel-text{
+    position: absolute;
+    margin-top: -20em;
+    margin-left: 25em;
+    align-self: center;
+    justify-content: center;
+}
+.button-carousel{
+    padding-right: 5em;
+    padding-left: 5em;
+    font-family: Montserrat-Bold;
+}
+
+.title {
+    font-family: Poppins-Bold;
+    /* color: #1D7A8C; */
+    color: black;
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    margin-bottom: 1em;
+}
+
+.button-secondary {
+    padding-right: 5em;
+    padding-left: 5em;
+    font-family: Montserrat-Bold;
+    margin-left: 1em;
+    color: #1D7A8C;
+}
