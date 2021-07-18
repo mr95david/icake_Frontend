@@ -25,7 +25,7 @@ _Front-End_
 
 [Elio Triana](https://www.github.com/mr95david)
 
-Jorge Bossio
+[Jorge Bossio](https://github.com/jbossio)
 
 [Gabriela Franco](https://www.github.com/gfrancoa)
 
