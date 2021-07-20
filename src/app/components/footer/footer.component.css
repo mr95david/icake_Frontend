@@ -1,9 +1,10 @@
 
 h5{
+position: fixed;
 background-color: skyblue;
 padding: 20px;
 margin: 0;
 /* position: absolute; */
-width: 90%;
+width: 100%;
 bottom: 0;
 }
