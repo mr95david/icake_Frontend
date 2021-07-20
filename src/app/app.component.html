@@ -1,0 +1,38 @@
+<section class="container" #scroll>
+  <article class="content" *ngFor="let question of questions; index as index">
+    <h1 class= "text-center title">{{titles[index]}}</h1>
+    <div class="select"></div>
+  </article>
+</section>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Seleccionar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item"  *ngFor="let opcion of opciones[position];" (click)="onSelect(opcion.value)">{{opcion.name}}</a>
+ 
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<button class="next btn btn-secondary" (click)="next()">next</button>
+<br>
+<button class="previous btn btn-secondary" (click)="previous()">previous</button>
+
+
+
+
+
+<p class="price">{{priceTotal | currency}}</p>
