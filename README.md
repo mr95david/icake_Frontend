@@ -18,7 +18,7 @@ _Back-end:_
 
 [Luis Rada](https://www.github.com/luisrada14)
 
-Yully Rincón
+[Yully Rincón](https://www.github.com/yullyrincon)
 
 
 _Front-End_
