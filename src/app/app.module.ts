@@ -11,6 +11,7 @@ import {ButtonModule} from 'primeng/button';
 import { StatusOrderComponent } from './components/status-order/status-order.component';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { PedidoComponent } from './components/pedido/pedido.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PedidoComponent } from './components/pedido/pedido.component';
     CarouselComponent,
     StatusOrderComponent,
     PedidoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
