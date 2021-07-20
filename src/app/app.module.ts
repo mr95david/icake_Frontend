@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from 'primeng/button';
 import { StatusOrderComponent } from './components/status-order/status-order.component';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { PedidoComponent } from './components/pedido/pedido.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
     ButtonComponent,
     CarouselComponent,
     StatusOrderComponent,
+    PedidoComponent,
   ],
   imports: [
     BrowserModule,
