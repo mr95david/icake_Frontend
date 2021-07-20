@@ -1,15 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@font-face {
+
+/* @font-face {
     font-family: Montserrat-Bold;
     src: url(./assets/fonts/Montserrat-Bold.ttf);
 }
 @font-face {
     font-family: Poppins-Bold;
     src: url(./assets/fonts/Poppins-Bold.ttf);
-}
+} */
 
-body {
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 };
 

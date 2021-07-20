@@ -16,7 +16,12 @@ header {
     margin-right: 20px;
     background-color: transparent;
     border-width: 0;
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+button:hover{
+    color:#FF7D97;
 }
 
 img {

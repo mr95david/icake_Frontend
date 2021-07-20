@@ -1,20 +1,25 @@
 
 
 .carousel-text{
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    margin-top: -20em;
-    margin-left: 25em;
+    margin-top: -25em;
+    /* margin-left: 25em; */
     align-self: center;
     justify-content: center;
 }
 .button-carousel{
     padding-right: 5em;
     padding-left: 5em;
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat','sans-serif';
+    font-weight: 700;
+    margin-bottom: 1em;
 }
 
 .title {
-    font-family: Poppins-Bold;
+    font-family: 'Poppins','sans-serif';
+    font-weight: 500;
     /* color: #1D7A8C; */
     color: black;
     margin-bottom: 0.5em;
@@ -22,12 +27,15 @@
 
 .subtitle {
     margin-bottom: 1em;
+    color:#3a5257;
 }
 
 .button-secondary {
-    padding-right: 5em;
-    padding-left: 5em;
-    font-family: Montserrat-Bold;
+    padding-right: 2em;
+    padding-left: 2em;
+    font-family: 'Montserrat','sans-serif';
+    font-weight: 700;
     margin-left: 1em;
     color: #1D7A8C;
+    margin-bottom: 1em;
 }

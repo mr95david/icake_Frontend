@@ -8,6 +8,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from 'primeng/button';
+import { StatusOrderComponent } from './components/status-order/status-order.component';
+import {TabMenuModule} from 'primeng/tabmenu';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import {ButtonModule} from 'primeng/button';
     HeaderComponent,
     ButtonComponent,
     CarouselComponent,
+    StatusOrderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ButtonModule
+    ButtonModule,
+    TabMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
