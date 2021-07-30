@@ -28,19 +28,12 @@ export class PedidoComponent implements OnInit {
    }
 
   public ngOnInit(): void {
-
-    this.questions = [
-      {"pequeño": 1, "mediano": 2, "grande":5},
-      {"Vainilla": 1, "Chocolate": 1.1, "Vino": 1.25},
-      {"Cobertura 1": 1, "Cobertura 2": 1.2, "Cobertura 3": 1.1}
-    ];
     this.step = 0;
-    
+  
     this.titles = [
       "Escoge el tamaño de tu torta", 
       "Escoge el sabor de tu torta", 
-      "Escoge la cobertura de tu torta", 
-      "Mensaje personaizado"
+      "Escoge la cobertura de tu torta" 
     ];
     this.priceTotal = 0;
   }
@@ -50,12 +43,12 @@ export class PedidoComponent implements OnInit {
     const content= this.elementRef.nativeElement.querySelectorAll(".content")[0];
     const position= container.scrollLeft;
     const width = content.clientWidth;
-    const fullWidth = width * (this.titles.length - 1);
+    const fullWidth = width * (this.titles.length);
     let current = position + width;
     if (current>fullWidth) return;
     container.scrollLeft = current;
     
-    if (this.position < 2) {
+    if (this.position <2) {
       this.position++;
     }
   }
