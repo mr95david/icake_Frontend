@@ -1,12 +1,12 @@
 <section class="container" #scroll>
-    <article class="content" *ngFor="let opcion of opciones; index as index">
+    <article class="content" *ngFor="let title of titles; index as index">
         <h1 class="text-center title">{{titles[index]}}</h1>
         <div class="select"></div>
     </article>
 </section>
 
 
-<div class="dropdown">
+<div class="dropdown" *ngIf="position<3">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         Seleccionar
@@ -18,23 +18,71 @@
     </div>
 </div>
 
+<div *ngIf="position===3">
+    <form class="was-validated">
+        <div class="mb-3">
+          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Mensaje requerido" required>
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="next()"> Enviar</button>
+    </form>
+</div>
+ 
+<div *ngIf="position==4">
+    <form action="" style="align-items:center">
+        <input type="text" id="cedula" class="col-12" style="margin-bottom: 1em; border-radius: 20px;padding: 30;">
+        <input pButton type="submit" class="col-6 p-button-rounded" value="Validar datos"
+            style="background-color: '#FF7D97'; border-color: '#FF7D97'; align-self: center; font-weight: 700;">
+        <button type="submit" class="btn btn-primary" (click)="next()">Registrarse</button>
+    </form>
+</div>
+
+<div *ngIf="position==5">
+    <form>
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Nombres y apellidos " class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Cédula" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Ciudad" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Dirección" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Datos de dirección adicionales" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Celular" class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="next()">Enviar pedido</button>
+    </form>
+</div>
+
+
+
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<button class="next btn btn-secondary" (click)="next()">next</button>
+<button class="next btn btn-secondary" *ngIf="position<3" (click)="next()">Siguiente</button>
 <br>
-<button class="previous btn btn-secondary" (click)="previous()">previous</button>
+<button class="previous btn btn-secondary" *ngIf="position>0" (click)="previous()">Anterior</button> 
 
 
-
-
-
+<label for="price" class="control-label">Precio total</label>
 <p class="price">{{priceTotal | currency}}</p>
