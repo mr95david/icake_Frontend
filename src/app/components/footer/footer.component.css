@@ -1,17 +1,8 @@
-body{
-  background-color: rgb(255, 148, 216);
-  display: flex;
-  min-height: 10vh;
-  align-items: center;
-  justify-content: left;
-  color: white;
-}
-
 .redes-container a{
   display: inline-flex;
   color:white;
-  height: 50px;
-  width: 50px;
+  height: 32px;
+  width: 32px;
   background-color: #000000;
   justify-content: center;
   align-items: center;

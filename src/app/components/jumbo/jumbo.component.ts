@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jumbo.component.css']
 })
 export class JumboComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
