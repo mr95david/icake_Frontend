@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import {ApiService} from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,7 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  constructor (private get:ApiService){
+    this.get.getCoberturas().subscribe(data =>{console.log(data)})
+  }
 }
