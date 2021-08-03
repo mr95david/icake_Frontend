@@ -12,6 +12,7 @@ import { StatusOrderComponent } from './components/status-order/status-order.com
 import {TabMenuModule} from 'primeng/tabmenu';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsContactComponent } from './components/forms-contact/forms-contact.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
     StatusOrderComponent,
     PedidoComponent,
     FooterComponent,
+    FormsContactComponent,
   ],
   imports: [
     BrowserModule,
