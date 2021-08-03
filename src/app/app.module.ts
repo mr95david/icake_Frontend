@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,16 +12,14 @@ import { StatusOrderComponent } from './components/status-order/status-order.com
 import {TabMenuModule} from 'primeng/tabmenu';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { FooterComponent } from './components/footer/footer.component';
-<<<<<<< HEAD
 import { FormsContactComponent } from './components/forms-contact/forms-contact.component';
-=======
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { JumboComponent } from './components/jumbo/jumbo.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { OrderComponent } from './components/order/order.component';
->>>>>>> f8bf24bd84eaeac883a236ed2db54a5b0b166acb
+
 
 
 @NgModule({
@@ -34,16 +31,16 @@ import { OrderComponent } from './components/order/order.component';
     StatusOrderComponent,
     PedidoComponent,
     FooterComponent,
-<<<<<<< HEAD
+
     FormsContactComponent,
-=======
+
     NavbarComponent,
     ContactComponent,
     JumboComponent,
     TrackingComponent,
     ModalComponent,
     OrderComponent,
->>>>>>> f8bf24bd84eaeac883a236ed2db54a5b0b166acb
+
   ],
   imports: [
     BrowserModule,
