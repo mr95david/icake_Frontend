@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 2px;
+}
+
+ul li {
+    padding: 2px 2px;
+}
+
+ul li a{
+    color: #FF0A3B;
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+}
+
+ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 43%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+ul li a:hover::before {
+    background-color: #FF0A3B;
+}
