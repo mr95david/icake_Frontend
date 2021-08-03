@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
   background-color: rgb(247, 250, 73);
   display: flex;
@@ -7,11 +8,13 @@ body{
   color: white;
 }
 
+=======
+>>>>>>> f8bf24bd84eaeac883a236ed2db54a5b0b166acb
 .redes-container a{
   display: inline-flex;
   color:white;
-  height: 50px;
-  width: 50px;
+  height: 32px;
+  width: 32px;
   background-color: #000000;
   justify-content: center;
   align-items: center;

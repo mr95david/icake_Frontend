@@ -33,7 +33,10 @@ export class PedidoComponent implements OnInit {
     this.titles = [
       "Escoge el tamaño de tu torta", 
       "Escoge el sabor de tu torta", 
-      "Escoge la cobertura de tu torta" 
+      "Escoge la cobertura de tu torta",
+      "Escribe aquí tu mensaje",
+      "¿Estás registrado?",
+      "Datos del cliente" 
     ];
     this.priceTotal = 0;
   }
@@ -48,7 +51,7 @@ export class PedidoComponent implements OnInit {
     if (current>fullWidth) return;
     container.scrollLeft = current;
     
-    if (this.position <2) {
+    if (this.position <5) {
       this.position++;
     }
   }

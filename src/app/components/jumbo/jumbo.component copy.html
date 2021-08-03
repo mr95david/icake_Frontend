@@ -1,0 +1,38 @@
+<ngb-carousel
+        [showNavigationArrows]="true" 
+        [showNavigationIndicators]="true"
+        [interval]="20000"
+        [keyboard]="true"
+        [pauseOnHover]="true"
+        [wrap]="true"
+        [activeId]="'sliderThree'">
+
+    <ng-template ngbSlide id="sliderOne">
+        <div class="picsum-img-wrapper">
+            <img src="/assets/img/jacob_schwartz_unsplash.jpg" alt="Carousel One">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title</h3>
+            <p>Aenean malesuada nisi ut commodo semper.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide id="sliderTwo">
+        <div class="picsum-img-wrapper">
+            <img src="/assets/img/taylor_kiser_unsplash.jpg" alt="Carousel Two">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title</h3>
+            <p>Aenean malesuada nisi ut commodo semper, Sit amet sagittis dolor.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide id="sliderThree">
+        <div class="picsum-img-wrapper">
+            <img src="/assets/img/david_holifield_unsplash.jpg" alt="Carousel Three">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title</h3>
+            <p>Commodo semper sit amet sagittis dolor.</p>
+        </div>
+    </ng-template>
+
+</ngb-carousel>
