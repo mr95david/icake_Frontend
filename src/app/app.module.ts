@@ -19,6 +19,7 @@ import { JumboComponent } from './components/jumbo/jumbo.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { OrderComponent } from './components/order/order.component';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -49,6 +50,7 @@ import { OrderComponent } from './components/order/order.component';
     NgbModule,
     ButtonModule,
     TabMenuModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
