@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Pedido } from './pedido.model';
+import { PedidoService } from './pedido.service';
 type question = {[option: string]: number};
 
 @Component({
@@ -12,9 +14,9 @@ export class PedidoComponent implements OnInit {
   public step!: number;
   public titles!: string[];
   public opciones: any[][] = [
-    [{'name': 'Pequeño', 'value': 1}, {'name': 'Mediano', 'value': 2}, {'name': 'Grande', 'value': 5}],
+    /* [{'name': 'Pequeño', 'value': 1}, {'name': 'Mediano', 'value': 2}, {'name': 'Grande', 'value': 5}],
     [{'name': 'Vainilla', 'value': 1}, {'name': 'Chocolate', 'value': 2}, {'name': 'Fresa', 'value': 3}, {'name': 'Fruto Rojos', 'value': 5}, {'name': 'Brownie', 'value': 7}],
-    [{'name': 'Cobertura 1', 'value': 2}, {'name': 'Cobertura 2', 'value': 4}, {'name': 'Cobertura 3', 'value': 6}]
+    [{'name': 'Cobertura 1', 'value': 2}, {'name': 'Cobertura 2', 'value': 4}, {'name': 'Cobertura 3', 'value': 6}] */
   ];
   public position: number = 0;
   private priceTamaño: number = 0;
@@ -22,10 +24,14 @@ export class PedidoComponent implements OnInit {
   private priceCobertura: number = 0;
   public priceTotal: number = 0;
   public backup!: number;
+  private pedidoToSave: Pedido;
 
-  constructor(private elementRef: ElementRef) {
-    
-   }
+  constructor(
+    private elementRef: ElementRef,
+    private pedidoService: PedidoService
+  ) {
+    this.getTamaños();
+  }
 
   public ngOnInit(): void {
     this.step = 0;
@@ -39,6 +45,44 @@ export class PedidoComponent implements OnInit {
       "Datos del cliente" 
     ];
     this.priceTotal = 0;
+  }
+
+  private getTamaños() {
+    this.pedidoService.getAllTamaños().subscribe(
+      (res: any) => {
+        this.opciones[1] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+
+        this.opciones[1] = res.map((item) => {
+          let obj = {};
+          obj['name'] = item.tamano_libras;
+          obj['value'] = item.precio;
+          obj['id'] = item._id;
+          return obj; 
+        });
+      },
+      (err) => {
+        console.log(err)
+      }
+    );
+  }
+
+  private getCoberturas() {
+    this.pedidoService.getAllCoberturas().subscribe(
+      (res: any) => {
+        this.opciones[0] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+
+        this.opciones[0] = res.map((item) => {
+          let obj = {};
+          obj['name'] = item.tamano_libras;
+          obj['value'] = item.precio;
+          obj['id'] = item._id;
+          return obj; 
+        });
+      },
+      (err) => {
+
+      }
+    );
   }
 
   public next(): void {

@@ -8,6 +8,6 @@ import {ApiService} from './services/api.service';
 })
 export class AppComponent {
   constructor (private get:ApiService){
-    this.get.getCoberturas().subscribe(data =>{console.log(data)})
+    //this.get.getCoberturas().subscribe(data =>{console.log(data)})
   }
 }
