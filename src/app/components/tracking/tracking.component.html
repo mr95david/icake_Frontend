@@ -4,8 +4,9 @@
       <h1 class="display-6 mt-8 text-white">Consulta el estado de tu orden ingresando el código de tu pedido</h1></div>
     <div class="col">
       <div class=" d-flex align-items-center form-group p-5">
-        <input type="email" class="form-control p-2" id="#" placeholder="Ingrese el número del pedido">
-        <button class="btn btn-md btn-primary" (click)="open()">Consultar</button>
+        <input type="text" #box class="form-control p-2" id="#" (keyup)="getCodigoPedido(box.value)"
+          placeholder="Ingrese el número del pedido" />
+        <button class="btn btn-md btn-primary" (click)="pedidoById()">Consultar</button>
       </div>
     </div>
   </div>

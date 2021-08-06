@@ -31,6 +31,8 @@ export class PedidoComponent implements OnInit {
     private pedidoService: PedidoService
   ) {
     this.getTamaños();
+    this.getCoberturas();
+    this. getSabores();
   }
 
   public ngOnInit(): void {
@@ -50,9 +52,9 @@ export class PedidoComponent implements OnInit {
   private getTamaños() {
     this.pedidoService.getAllTamaños().subscribe(
       (res: any) => {
-        this.opciones[1] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+        this.opciones[0] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
 
-        this.opciones[1] = res.map((item) => {
+        this.opciones[0] = res.map((item) => {
           let obj = {};
           obj['name'] = item.tamano_libras;
           obj['value'] = item.precio;
@@ -69,18 +71,37 @@ export class PedidoComponent implements OnInit {
   private getCoberturas() {
     this.pedidoService.getAllCoberturas().subscribe(
       (res: any) => {
-        this.opciones[0] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+        this.opciones[2] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
 
-        this.opciones[0] = res.map((item) => {
+        this.opciones[2] = res.map((item) => {
           let obj = {};
-          obj['name'] = item.tamano_libras;
+          obj['name'] = item.cobertura_torta;
           obj['value'] = item.precio;
           obj['id'] = item._id;
           return obj; 
         });
       },
       (err) => {
+        console.log(err)
+      }
+    );
+  }
 
+  private getSabores() {
+    this.pedidoService.getAllSabores().subscribe(
+      (res: any) => {
+        this.opciones[1] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+
+        this.opciones[1] = res.map((item) => {
+          let obj = {};
+          obj['name'] = item.sabor_bizcocho;
+          obj['value'] = item.precio;
+          obj['id'] = item._id;
+          return obj; 
+        });
+      },
+      (err) => {
+        console.log(err)
       }
     );
   }
