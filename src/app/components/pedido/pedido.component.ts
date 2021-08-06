@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Pedido } from './pedido.model';
+import { PedidoService } from './pedido.service';
 type question = {[option: string]: number};
 
 @Component({
@@ -12,9 +14,9 @@ export class PedidoComponent implements OnInit {
   public step!: number;
   public titles!: string[];
   public opciones: any[][] = [
-    [{'name': 'Pequeño', 'value': 1}, {'name': 'Mediano', 'value': 2}, {'name': 'Grande', 'value': 5}],
+    /* [{'name': 'Pequeño', 'value': 1}, {'name': 'Mediano', 'value': 2}, {'name': 'Grande', 'value': 5}],
     [{'name': 'Vainilla', 'value': 1}, {'name': 'Chocolate', 'value': 2}, {'name': 'Fresa', 'value': 3}, {'name': 'Fruto Rojos', 'value': 5}, {'name': 'Brownie', 'value': 7}],
-    [{'name': 'Cobertura 1', 'value': 2}, {'name': 'Cobertura 2', 'value': 4}, {'name': 'Cobertura 3', 'value': 6}]
+    [{'name': 'Cobertura 1', 'value': 2}, {'name': 'Cobertura 2', 'value': 4}, {'name': 'Cobertura 3', 'value': 6}] */
   ];
   public position: number = 0;
   private priceTamaño: number = 0;
@@ -22,27 +24,46 @@ export class PedidoComponent implements OnInit {
   private priceCobertura: number = 0;
   public priceTotal: number = 0;
   public backup!: number;
+  private pedidoToSave: Pedido;
 
-  constructor(private elementRef: ElementRef) {
-    
-   }
+  constructor(
+    private elementRef: ElementRef,
+    private pedidoService: PedidoService
+  ) {
+    this.getTamaños();
+  }
 
   public ngOnInit(): void {
-
-    this.questions = [
-      {"pequeño": 1, "mediano": 2, "grande":5},
-      {"Vainilla": 1, "Chocolate": 1.1, "Vino": 1.25},
-      {"Cobertura 1": 1, "Cobertura 2": 1.2, "Cobertura 3": 1.1}
-    ];
     this.step = 0;
-    
+  
     this.titles = [
       "Escoge el tamaño de tu torta", 
       "Escoge el sabor de tu torta", 
-      "Escoge la cobertura de tu torta", 
-      "Mensaje personaizado"
+      "Escoge la cobertura de tu torta",
+      "Escribe aquí tu mensaje",
+      "¿Estás registrado?",
+      "Datos del cliente" 
     ];
     this.priceTotal = 0;
+  }
+
+  private getTamaños() {
+    this.pedidoService.getAllTamaños().subscribe(
+      (res: any) => {
+        this.opciones[0] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+
+        this.opciones[0] = res.map((item) => {
+          let obj = {};
+          obj['name'] = item.tamano_libras;
+          obj['value'] = item.precio;
+          obj['id'] = item._id;
+          return obj; 
+        });
+      },
+      (err) => {
+
+      }
+    );
   }
 
   public next(): void {
@@ -50,12 +71,12 @@ export class PedidoComponent implements OnInit {
     const content= this.elementRef.nativeElement.querySelectorAll(".content")[0];
     const position= container.scrollLeft;
     const width = content.clientWidth;
-    const fullWidth = width * (this.titles.length - 1);
+    const fullWidth = width * (this.titles.length);
     let current = position + width;
     if (current>fullWidth) return;
     container.scrollLeft = current;
     
-    if (this.position < 2) {
+    if (this.position <5) {
       this.position++;
     }
   }

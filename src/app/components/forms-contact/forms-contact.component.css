@@ -1,0 +1,13 @@
+div{
+	box-sizing: border-box;
+	background-color: rgb(247, 218, 105);
+  text-align: center;
+  box-sizing: border-box;
+  width: auto;
+  padding: 10px;
+  margin: auto;
+  border-radius: 0px;
+  font-family: calibry;
+  color: blue;
+}
+
