@@ -50,6 +50,25 @@ export class PedidoComponent implements OnInit {
   private getTamaños() {
     this.pedidoService.getAllTamaños().subscribe(
       (res: any) => {
+        this.opciones[1] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
+
+        this.opciones[1] = res.map((item) => {
+          let obj = {};
+          obj['name'] = item.tamano_libras;
+          obj['value'] = item.precio;
+          obj['id'] = item._id;
+          return obj; 
+        });
+      },
+      (err) => {
+        console.log(err)
+      }
+    );
+  }
+
+  private getCoberturas() {
+    this.pedidoService.getAllCoberturas().subscribe(
+      (res: any) => {
         this.opciones[0] = new Array(res.length).fill({'id': '', 'name': '', 'value': ''});
 
         this.opciones[0] = res.map((item) => {
