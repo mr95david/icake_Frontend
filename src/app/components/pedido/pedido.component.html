@@ -13,26 +13,24 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" *ngFor="let opcion of opciones[position];"
-            (click)="onSelect(opcion.value)">{{opcion.name}}</a>
-
+            (click)="onSelect(opcion.value, opcion.name)">{{opcion.name}}</a>
     </div>
 </div>
 
 <div *ngIf="position===3">
     <form class="was-validated">
         <div class="mb-3">
-          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Mensaje requerido" required>
+          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Mensaje requerido" required #mensaje (keyup)="onGetMensaje(mensaje.value)">
           </textarea>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="next()"> Enviar</button>
+        <button type="submit" class="btn btn-primary" (click)="next()">Enviar</button>
     </form>
 </div>
  
 <div *ngIf="position==4">
-    <form action="" style="align-items:center">
-        <input type="text" id="cedula" class="col-12" style="margin-bottom: 1em; border-radius: 20px;padding: 30;">
-        <input pButton type="submit" class="col-6 p-button-rounded" value="Validar datos"
-            style="background-color: '#FF7D97'; border-color: '#FF7D97'; align-self: center; font-weight: 700;">
+    <form style="align-items:center">
+        <input type="text" id="cedula" class="col-12" style="margin-bottom: 1em; border-radius: 20px;padding: 30;" placeholder="Cédula"  #cedula (keyup)="onGetCedulaCliente(cedula.value)">
+        <a pButton type="submit" class="col-6 p-button-rounded" style="background-color: '#FF7D97'; border-color: '#FF7D97'; align-self: center; font-weight: 700;" (click)="onValidarCliente()">Validar datos</a>
         <button type="submit" class="btn btn-primary" (click)="next()">Registrarse</button>
     </form>
 </div>
@@ -70,12 +68,23 @@
                 <input id="fname" name="name" type="text" placeholder="Celular" class="form-control">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="next()">Enviar pedido</button>
+        <button type="submit" class="btn btn-primary" (click)="next()">Ver resumen pedido</button>
     </form>
 </div>
 
+<div *ngIf="position === 6">
+    <p>Este es el resumen de la orden de tu torta: </p>
+    <p>Tamaño: {{tamanoSeleccionado}}</p>
+    <p>Sabor de bizcocho: {{saborSeleccionado}}</p>
+    <p>Cobertura: {{coberturaSeleccionado}}</p>
+    <p>Mensaje: {{mensajeEscrito}}</p>
+    <button (click)="onSubmitPedido()" class="btn btn-primary">Enviar pedido</button>
+    <button class="btn btn-secondary">Volver al inicio</button>
+</div>
 
-
+<div *ngIf=" position === 7">
+    <p>El ID de tu orden es: {{idPedido}}</p>
+</div>
 
 <br>
 

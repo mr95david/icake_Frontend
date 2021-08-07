@@ -10,31 +10,37 @@ import { TrackingService } from './tracking.service';
 })
 export class TrackingComponent implements OnInit {
 
-  constructor(public modalService: NgbModal,private trackingService: TrackingService) {
-    
-   }
+  constructor (
+    public modalService: NgbModal, 
+    private trackingService: TrackingService
+  ) {
+
+  }
 
   public codigoPedido;
 
-  getCodigoPedido(val){
+  getCodigoPedido(val) {
     // console.log(val)
     this.codigoPedido = val;
   }
 
-  pedidoById(){
-    this.trackingService.getPedidoById(this.codigoPedido).subscribe((res:any)=>{
-      // console.log(res);
-      if(res.message=="pedido no encontrado"){
-        console.log('no existe el codigo de pedido')
-      }
-    },(err) => {
-        // console.log('este es el error',err)
-        if (err.statusText=="Unknown Error"){
+  pedidoById() {
+    this.trackingService.getPedidoById(this.codigoPedido).subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res.message == "pedido no encontrado") {
+          console.log('no existe el codigo de pedido')
+        }
+      }, 
+      (err) => {
+      // console.log('este es el error',err)
+        if (err.statusText == "Unknown Error") {
           console.log('codigo de pedido inválido')
-        } else if (err.message == "pedido no encontrado"){
+        } else if (err.message == "pedido no encontrado") {
           console.log('no existe el codigo de pedido (ERROR)')
         }
-      })
+      }
+    );
   }
 
   ngOnInit(): void {

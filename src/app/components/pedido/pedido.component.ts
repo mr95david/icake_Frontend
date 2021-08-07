@@ -13,11 +13,7 @@ export class PedidoComponent implements OnInit {
   public questions!: question[];
   public step!: number;
   public titles!: string[];
-  public opciones: any[][] = [
-    /* [{'name': 'Pequeño', 'value': 1}, {'name': 'Mediano', 'value': 2}, {'name': 'Grande', 'value': 5}],
-    [{'name': 'Vainilla', 'value': 1}, {'name': 'Chocolate', 'value': 2}, {'name': 'Fresa', 'value': 3}, {'name': 'Fruto Rojos', 'value': 5}, {'name': 'Brownie', 'value': 7}],
-    [{'name': 'Cobertura 1', 'value': 2}, {'name': 'Cobertura 2', 'value': 4}, {'name': 'Cobertura 3', 'value': 6}] */
-  ];
+  public opciones: any[][] = [];
   public position: number = 0;
   private priceTamaño: number = 0;
   private priceSabor: number = 0;
@@ -25,6 +21,14 @@ export class PedidoComponent implements OnInit {
   public priceTotal: number = 0;
   public backup!: number;
   private pedidoToSave: Pedido;
+  public tamanoSeleccionado: string;
+  public saborSeleccionado: string;
+  public coberturaSeleccionado: string;
+  public mensajeEscrito: any;
+  public cedulaCliente: string;
+  private token: string;
+  private idProducto: string;
+  public idPedido: string;
 
   constructor(
     private elementRef: ElementRef,
@@ -44,7 +48,9 @@ export class PedidoComponent implements OnInit {
       "Escoge la cobertura de tu torta",
       "Escribe aquí tu mensaje",
       "¿Estás registrado?",
-      "Datos del cliente" 
+      "Datos del cliente",
+      "Ya casi tienes tu iCake!",
+      "¡Hemos recibido tu pedido!"
     ];
     this.priceTotal = 0;
   }
@@ -116,8 +122,12 @@ export class PedidoComponent implements OnInit {
     if (current>fullWidth) return;
     container.scrollLeft = current;
     
-    if (this.position <5) {
+    if (this.position < 7) {
       this.position++;
+    }
+
+    if (this.position === 3) {
+      console.log(this.mensajeEscrito);
     }
   }
 
@@ -136,17 +146,87 @@ export class PedidoComponent implements OnInit {
     }
   }
 
-  public onSelect(value: number): void {
+  public onSelect(value: number, name: string): void {
     
     if (this.position === 0) {
+      this.tamanoSeleccionado = name;
       this.priceTamaño = value;
     } else if (this.position === 1) {
+      this.saborSeleccionado = name;
       this.priceSabor = value;
     } else if (this.position === 2) {
+      this.coberturaSeleccionado = name;
       this.priceCobertura = value;
     }
     
     this.priceTotal = this.priceTamaño + this.priceSabor + this.priceCobertura;
+  }
+
+  public onGetMensaje(mensaje: string): void {
+    this.mensajeEscrito = mensaje;
+  }
+
+  public onGetCedulaCliente(cedula: string): void {
+    this.cedulaCliente = cedula;
+  }
+
+  public onSubmitPedido(): void {
+    
+    let dataProducto = {
+      mensaje: this.mensajeEscrito,
+      sabor_torta: this.saborSeleccionado,
+      tamano_torta: this.tamanoSeleccionado,
+      cobertura_torta: this.coberturaSeleccionado,
+      precio_total: this.priceTotal
+    };
+
+    let dataPedido = {
+      comprador: this.cedulaCliente,
+      articulo: this.idProducto,
+      estado_envio: '60fdcbd6cb62f722031fa03d'
+    };
+
+    this.pedidoService.saveProducto(dataProducto).subscribe(
+      (res: any) => {
+        this.idProducto = res.message._id;
+        dataPedido.articulo = this.idProducto;
+      },
+      (err) => {
+
+      }
+    );
+
+    this.pedidoService.savePedido(dataPedido, this.token).subscribe(
+      (res: any) => {
+        this.idPedido = res.message._id;
+        this.next();
+      },
+      (err) => {
+
+      }
+    );
+
+  }
+
+  public onValidarCliente(): void {
+
+    let data = {
+      _id: this.cedulaCliente
+    };
+
+    this.pedidoService.loginCliente(data).subscribe(
+      (res: any) => {
+        if (res.token !== undefined && res.token !== null) {
+          this.token = res.token;
+          
+          this.next();
+          this.next();
+        }
+      },
+      (err) => {
+        this.next();
+      }
+    );
   }
 
 }
