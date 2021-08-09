@@ -1,3 +1,7 @@
+nav {
+    background-color: #ffffff;
+}
+
 ul {
     list-style: none;
     display: flex;
@@ -10,7 +14,8 @@ ul li {
 }
 
 ul li a{
-    color: #FF0A3B;
+    color: #FF9EB1;
+    font-size: 20px;
     text-decoration: none;
     position: relative;
     font-weight: 600;
@@ -28,5 +33,5 @@ ul li a::before {
 }
 
 ul li a:hover::before {
-    background-color: #FF0A3B;
+    background-color: #FF9EB1;
 }

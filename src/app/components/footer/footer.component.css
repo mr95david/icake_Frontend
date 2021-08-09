@@ -1,13 +1,18 @@
 
-body{
-  background-color: rgb(247, 250, 73);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+footer{
+  background-color: #ffffff;
   display: flex;
   min-height: 10vh;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   color: white;
 }
-
 
 .redes-container a{
   display: inline-flex;
@@ -23,10 +28,16 @@ body{
   transition: transform 0.4s;
 }
 
-h5{
-  text-align: right;
-  color: blue;
-  height: 0.5px;
+.info-container {
+  height: 10vh;
+}
+
+.info-container h5{
+  display: flex;
+  color: #FE2E64;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .redes-container a:hover{
