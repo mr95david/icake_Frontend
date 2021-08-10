@@ -20,6 +20,7 @@
     overflow: hidden;
     padding:0;
     margin:0px;
+    box-shadow: 0 0 15px -6px ;
   }
   .cube {
     position: absolute;
@@ -68,17 +69,16 @@
 /* Fin de Backgrond */
 
 .order-styles {
-    position: absolute;
-    width:100%;
-    margin: 0;
-    padding: 0;
-    top: 125%;
-    left: 5%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 #titulo {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 100px;
 }
 
@@ -93,15 +93,16 @@
   text-transform: uppercase;
   font-family: 'Acme', sans-serif;
   -webkit-text-fill-color: transparent;
+  font-size: 3rem;
 }
 
 .button-1 {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
-    background: #C5A3FF;
+    background: #ED8074;
     padding: 15px 40px;
     border-radius: 30px;
-    border-color: #C5A3FF;
+    border-color: #ED8074;
     color: #ffffff;
     font-family: 'Acme', sans-serif;
     font-size: 18px;
@@ -112,10 +113,10 @@
   .button-2 {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
-    background: #ECD4FF;
+    background: #1D7A8C;
     padding: 15px 40px;
     border-radius: 30px;
-    border-color: #ECD4FF;
+    border-color: #1D7A8C;
     color: #ffffff;
     font-family: 'Acme', sans-serif;
     font-size: 18px;
@@ -125,12 +126,12 @@
 
   .glow-button-1:hover {
     color: rgba(255, 255, 255, 1);
-    box-shadow: 0 5px 15px #C5A3FF;
+    box-shadow: 0 5px 15px #ED8074;
   }
 
   .glow-button-2:hover {
     color: rgba(255, 255, 255, 1);
-    box-shadow: 0 5px 15px #ECD4FF;
+    box-shadow: 0 5px 15px #1D7A8C;
   }
 
   /* animacion background */
