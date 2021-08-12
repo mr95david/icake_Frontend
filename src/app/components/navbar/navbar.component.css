@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
 nav {
-    background-color: #ffffff;
+    background-color: #ECE5DF;
 }
 
 ul {
@@ -14,8 +16,9 @@ ul li {
 }
 
 ul li a{
-    color: #FF9EB1;
+    color: #Cd6717;
     font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
     position: relative;
     font-weight: 600;
@@ -33,5 +36,5 @@ ul li a::before {
 }
 
 ul li a:hover::before {
-    background-color: #FF9EB1;
+    background-color: #Cd6717;
 }

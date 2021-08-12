@@ -1,4 +1,16 @@
-.bg-Contact {
-    background-color: #726cf8;
-background-image: linear-gradient(315deg, #726cf8 0%, #e975a8 74%);
+.page-section {
+    height: 90vh;
+    background-color: #ECE5DF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.container {
+    width: 90%;
+    height: 90%;
+    background-color: #726cf8;
+    background-image: linear-gradient(315deg, #726cf8 0%, #e975a8 74%);
+}
+
+

@@ -1,16 +1,19 @@
-<div id="tracking" class="container-fluid bg-dark h-100" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url(/assets/img/m_w_vL6XDSdvmec_unsplash.jpg);">
-  <div class="row align-items-center" style="height:400px">
-    <div class="col d-flex align-items-center ps-5 pe-5">
-      <h1 class="display-6 mt-8 text-white">Consulta el estado de tu orden ingresando el código de tu pedido</h1></div>
-    <div class="col">
-      <div class=" d-flex align-items-center form-group p-5">
-        <input type="text" #box class="form-control p-2" id="#" (keyup)="getCodigoPedido(box.value)"
-          placeholder="Ingrese el número del pedido" />
-        <button class="btn btn-md btn-primary" (click)="pedidoById()">Consultar</button>
+<main>
+  <div id="tracking" class="container-fluid bg-dark h-100"
+    style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url(/assets/img/m_w_vL6XDSdvmec_unsplash.jpg);">
+    <div class="row align-items-center" style="height:400px">
+      <div class="col d-flex align-items-center ps-5 pe-5">
+        <h1 class="display-6 mt-8 text-white">Consulta el estado de tu orden ingresando el código de tu pedido</h1>
+      </div>
+      <div class="col">
+        <div class=" d-flex align-items-center form-group p-5">
+          <input type="text" #box class="form-control p-2" id="#" (keyup)="getCodigoPedido(box.value)"
+            placeholder="Ingrese el número del pedido" />
+          <button class="btn btn-md btn-primary" (click)="pedidoById()">Consultar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
+</main>
 
 

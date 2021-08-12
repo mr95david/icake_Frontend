@@ -1,3 +1,8 @@
+main {
+    width: 100%;
+    height: 100vh;
+}
+
 .alignText {
     transform: translateY(50%);
     bottom: initial;
