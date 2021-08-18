@@ -20,7 +20,7 @@ import { TrackingComponent } from './components/tracking/tracking.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { OrderComponent } from './components/order/order.component';
 import { AdminModule } from './admin/admin.module';
-
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -41,6 +41,7 @@ import { AdminModule } from './admin/admin.module';
     TrackingComponent,
     ModalComponent,
     OrderComponent,
+    HomeComponent,
 
   ],
   imports: [

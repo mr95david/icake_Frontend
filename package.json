@@ -21,6 +21,8 @@
     "@angular/router": "~12.1.1",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bootstrap": "^4.5.0",
+    "bootstrap-icons": "^1.5.0",
+    "ng-sidebar": "^9.4.2",
     "primeicons": "^4.1.0",
     "primeng": "^12.0.0",
     "rxjs": "~6.6.0",
