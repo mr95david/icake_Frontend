@@ -53,3 +53,23 @@ button:hover {
         flex: none;
         scroll-snap-align: start;
     }
+
+    .dropdown-toggle {
+        background-color: red;
+    }
+    
+    .dropdown-toggle:hover {
+        background-color: green;
+    }
+
+    .dropdown-toggle:focus {
+        background-color: yellowgreen;
+    }
+
+    .dropdown-toggle:active {
+        background-color: rebeccapurple;
+    }
+    
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        background-color: yellow;
+    }

@@ -1,0 +1,87 @@
+<ng-sidebar-container>
+ 
+    <!-- A sidebar -->
+    <ng-sidebar [(opened)]="_opened">
+      <div class="st-sidebar">
+          <ul class="text-right">
+            <li closeSidebar class="btn btn-transparent"><i class="bi bi-x"></i></li>
+          </ul>
+          <h5 class="pl-2 pr-2">Pedidos</h5>
+          <div class="pl-2 pr-2">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a routerLinkActive="active" [routerLink]="['/admin/', 'nuevos']">Nuevos</a>
+                <span class="badge badge-primary badge-pill">14</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a [routerLink]="['/admin/', 'enProceso']">En proceso</a>
+                <span class="badge badge-primary badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a [routerLink]="['/admin/', 'enviados']">Enviados</a>
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a [routerLink]="['/admin/', 'entregados']">Entregados</a>
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+            </ul>
+          </div>
+
+          <h5 class="pt-5 pl-2 pr-2">Clientes</h5>
+          <div class="pl-2 pr-2">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Todos
+                <span class="badge badge-primary badge-pill">14</span>
+              </li>
+            </ul>
+          </div>
+
+      </div>
+    </ng-sidebar>
+
+    <!-- Page content -->
+    <div ng-sidebar-content>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-NavFoot">
+        <ul>
+          <li class="btn btn-transparent" (click)="_toggleSidebar()"><i class="bi bi-list"></i></li>
+        </ul>
+        <a class="navbar-brand" href="#"><img src="../../../assets/img/icake-nobg.png" alt="" height="40"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="ml-auto navbar-nav">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#carouselId">Salir</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      
+      <div [ngSwitch]="sidebarContent">
+        <div *ngSwitchCase="'nuevos'">
+          <app-pedidos-nuevos></app-pedidos-nuevos>
+        </div>
+        <div *ngSwitchCase="'enProceso'">
+          <app-pedidos-enproceso></app-pedidos-enproceso>
+        </div>
+        <div *ngSwitchCase="'enviados'">
+          <app-pedidos-enviados></app-pedidos-enviados>
+        </div>
+        <div *ngSwitchCase="'entregados'">
+          <app-pedidos-entregados></app-pedidos-entregados>
+        </div>
+        <div *ngSwitchCase="'todoClientes'">
+          <app-clientes-todos></app-clientes-todos>
+        </div>
+        <div *ngSwitchDefault="'dashboard'">
+          <app-dashboard></app-dashboard>
+        </div>
+      </div>
+      
+    </div>
+
+  </ng-sidebar-container>
