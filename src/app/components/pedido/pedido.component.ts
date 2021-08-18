@@ -47,10 +47,10 @@ export class PedidoComponent implements OnInit {
       "Escoge el sabor de tu torta", 
       "Escoge la cobertura de tu torta",
       "Escribe aquí tu mensaje",
-      "¿Estás registrado?",
-      "Datos del cliente",
-      "Ya casi tienes tu iCake!",
-      "¡Hemos recibido tu pedido!"
+      "",
+      "",
+      "",
+      ""
     ];
     this.priceTotal = 0;
   }
@@ -122,7 +122,7 @@ export class PedidoComponent implements OnInit {
     if (current>fullWidth) return;
     container.scrollLeft = current;
     
-    if (this.position < 7) {
+    if (this.position < 8) {
       this.position++;
     }
 
