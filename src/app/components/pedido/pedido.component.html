@@ -28,6 +28,7 @@
 </div>
  
 <div *ngIf="position==4">
+    <h1 class="text-center title">¿Estás registrado?</h1>
     <form style="align-items:center">
         <input type="text" id="cedula" class="col-12" style="margin-bottom: 1em; border-radius: 20px;padding: 30;" placeholder="Cédula"  #cedula (keyup)="onGetCedulaCliente(cedula.value)">
         <a pButton type="submit" class="col-6 p-button-rounded" style="background-color: '#FF7D97'; border-color: '#FF7D97'; align-self: center; font-weight: 700;" (click)="onValidarCliente()">Validar datos</a>
@@ -36,6 +37,7 @@
 </div>
 
 <div *ngIf="position==5">
+    <h1 class="text-center title">Datos del cliente</h1>
     <form>
         <div class="form-group">
             
@@ -74,6 +76,7 @@
 </div>
 
 <div *ngIf="position === 6">
+    <h1 class="text-center title">Ya casi tienes tu iCake!</h1>
     <p>Este es el resumen de la orden de tu torta: </p>
     <p>Tamaño: {{tamanoSeleccionado}}</p>
     <p>Sabor de bizcocho: {{saborSeleccionado}}</p>
@@ -84,6 +87,7 @@
 </div>
 
 <div *ngIf=" position === 7">
+    <h1 class="text-center title">¡Hemos recibido tu pedido!</h1>
     <p>El ID de tu orden es: {{idPedido}}</p>
 </div>
 
