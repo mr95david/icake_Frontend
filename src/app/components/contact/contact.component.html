@@ -46,6 +46,9 @@
             <!---->
             <!-- This is what your users will see when the form-->
             <!-- has successfully submitted-->
+            <div *ngIf="this.isAlert" class="alert alert-primary" role="alert">
+                Tu mensaje fue enviado exitosamente
+            </div>
             <div class="d-none" id="submitSuccessMessage">
                 <div class="text-center text-white mb-3">
                     <div class="fw-bolder">Form enviado exitosamente!</div>

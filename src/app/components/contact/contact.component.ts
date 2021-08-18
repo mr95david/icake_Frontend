@@ -13,10 +13,13 @@ export class ContactComponent implements OnInit {
     
   ) { }
 
+  
+
   public name: string
     public email: string
     public cellphone: string
-    public issue: string  
+    public issue: string 
+    public isAlert: Boolean 
 
   getName(val){
     this.name = val
@@ -43,7 +46,8 @@ export class ContactComponent implements OnInit {
 
     }
     this.contactService.sendMail(body).subscribe((response)=>{
-      console.log(response)
+      console.log('response del email',response)
+      this.isAlert = true;
     })
   }
 
