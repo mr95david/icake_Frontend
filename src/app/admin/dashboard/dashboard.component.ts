@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  sidebarContent: string;
+  
+  _opened: boolean = false;
+
+  constructor(private actRoute: ActivatedRoute, private router: Router) {
+    this.sidebarContent = this.actRoute.snapshot.params.id;
+  }
 
   ngOnInit(): void {
+  }
+ 
+  _toggleSidebar() {
+    this._opened = !this._opened;
   }
 
 }

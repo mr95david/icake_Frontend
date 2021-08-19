@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarModule } from 'ng-sidebar';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { PedidosNuevosComponent } from './pedidos-nuevos/pedidos-nuevos.component';
 import { PedidosEnprocesoComponent } from './pedidos-enproceso/pedidos-enproceso.component';
 import { PedidosEntregadosComponent } from './pedidos-entregados/pedidos-entregados.component';
@@ -15,7 +14,6 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LoginComponent,
     DashboardComponent,
-    SidebarComponent,
     PedidosNuevosComponent,
     PedidosEnprocesoComponent,
     PedidosEntregadosComponent,
@@ -29,7 +27,6 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     LoginComponent,
-    SidebarComponent
   ],
 })
 export class AdminModule { }
